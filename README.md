@@ -10,7 +10,7 @@
     * mvn clean install
     * java -jar target/vote-to-eat-api-0.0.1-SNAPSHOT.jar
 
-*The api documentation is available at: http://localhost:8080/swagger-ui.html *
+_The api documentation is available at: http://localhost:8080/swagger-ui.html_
 
 ### Diagram
 ![Alt text](./src/main/resources/assets/vote-to-eat.png?raw=true)
