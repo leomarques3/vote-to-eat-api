@@ -11,5 +11,7 @@ import com.chassot.vote.to.eat.api.model.Restaurant;
 public interface RestaurantRepository extends JpaRepository<Restaurant, String> {
 
 	public List<Restaurant> findByIsAvailable(Boolean isAvailable);
+	
+	public Restaurant findByName(String name);
 
 }

@@ -1,6 +1,8 @@
 package com.chassot.vote.to.eat.api.repository;
 
+import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
 
 import java.util.List;
@@ -25,6 +27,13 @@ public class RestaurantRepositoryTest {
 		List<Restaurant> found = restaurantRepository.findByIsAvailable(true);
 		
 		assertThat(found, hasSize(6));
+	}
+	
+	@Test
+	public void findByNameTest() {
+		Restaurant found = restaurantRepository.findByName("Madero");
+		
+		assertThat(found.getName(), is(equalTo("Madero")));
 	}
 
 }
