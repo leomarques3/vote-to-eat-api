@@ -6,6 +6,10 @@ import java.util.stream.Collectors;
 
 import com.chassot.vote.to.eat.api.model.Restaurant;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(value="Restaurant - ResponseBody - getAvailableRestaurants", description="ResponseBody to be returned in the getAvailableRestaurants get method")
 public class RestaurantDto {
 
 	public String name;
@@ -14,6 +18,7 @@ public class RestaurantDto {
 		this.name = restaurant.getName();
 	}
 
+	@ApiModelProperty(value = "Name of the available restaurant", required = true)
 	public String getName() {
 		return name;
 	}

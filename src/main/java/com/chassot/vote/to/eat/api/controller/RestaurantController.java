@@ -12,13 +12,23 @@ import com.chassot.vote.to.eat.api.exception.ResourceNotFoundException;
 import com.chassot.vote.to.eat.api.model.dto.RestaurantDto;
 import com.chassot.vote.to.eat.api.service.RestaurantService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
 @RestController
 @RequestMapping("/restaurant")
+@Api(value = "Restaurant Management API")
 public class RestaurantController {
 	
 	@Autowired
 	private RestaurantService restaurantService;
 	
+	@ApiOperation(value = "View a list of available restaurants in the week")
+	@ApiResponses(value = { 
+			@ApiResponse(code = 200, message = "Successfully retrieved the list"),
+			@ApiResponse(code = 404, message = "There are no available restaurants in the week") })
 	@GetMapping("/available")
 	public ResponseEntity<List<RestaurantDto>> getAvailableRestaurants() throws ResourceNotFoundException {
 		List<RestaurantDto> restaurants = restaurantService.getAvailableRestaurants();

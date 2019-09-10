@@ -15,13 +15,21 @@ import com.chassot.vote.to.eat.api.model.dto.VotingEventDto;
 import com.chassot.vote.to.eat.api.model.form.VotingEventForm;
 import com.chassot.vote.to.eat.api.service.VotingEventService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
 @RestController
 @RequestMapping("/vote")
+@Api(value = "Voting system API")
 public class VotingEventController {
-	
+
 	@Autowired
 	private VotingEventService votingEventService;
-	
+
+	@ApiOperation(value = "Save the restaurant chosen by the user")
+	@ApiResponses(value = { @ApiResponse(code = 201, message = "Successfully saved the restaurant") })
 	@PostMapping("/save")
 	public ResponseEntity<VotingEventDto> saveVote(@RequestBody @Valid VotingEventForm votingEventForm) {
 		VotingEvent votingEvent = votingEventService.saveVote(votingEventForm);

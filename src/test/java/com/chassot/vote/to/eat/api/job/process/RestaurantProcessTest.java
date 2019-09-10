@@ -1,10 +1,7 @@
 package com.chassot.vote.to.eat.api.job.process;
 
-import static org.mockito.ArgumentMatchers.anyBoolean;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.is;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyBoolean;
 
 import java.util.List;
 
